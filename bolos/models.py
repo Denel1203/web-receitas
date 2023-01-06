@@ -9,3 +9,6 @@ class Receita(models.Model):
     Categoria = models.CharField(max_length=50)
     Por = models.CharField(max_length=50)
     Modo_preparo = models.TextField(max_length=500)
+
+    def __str__(self):
+        return self.Nome_Receita
