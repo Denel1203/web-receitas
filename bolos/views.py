@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from .forms import ReceitaForm
-
+from .models import Receita
 
 def index(request):  
-    return render (request, 'bolos/index.html')
+    mos = Receita.objects.all()
+    return render (request, 'bolos/index.html', {'mos': mos})
 
 
 def receita(request):

@@ -5,10 +5,8 @@
 <h1>formulario</h1>
 <form method="post">
     {% csrf_token %}
-    {{ form.Nome_Receita }}
-    {{ form.Ingredientees }}
-    {{ form.Rendimento }}
-    {{ form.Modo_preparo }}
+    {{ form.as_p }}
+    
     <input type = "submit" value = "criar">
 </form>
 
