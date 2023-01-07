@@ -82,7 +82,7 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="{% url 'index' %}">Home</a></li>
-                                    <li><a href="{% url 'receita' %}">Receitas</a></li>
+                                    
                                 </ul>
 
                                 <!-- Formulario de busca -->
@@ -106,20 +106,31 @@
         <div class="container">
             <div class="row">
                 <!-- Single Best Receipe Area -->
-
+                {% if  mos %}
                 {% for mos in mos %}
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-best-receipe-area mb-30">
                         <img src="{% static 'img/bg-img/foto_receita.png' %}" alt="">
                         <div class="receipe-content">
-                            <a href="receita.html">
+                            <a href="{% url 'receita' mos.id %}">
                                 <h5>{{mos.Nome_Receita}}</h5>
                             </a>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
-
+                {% else %}
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-best-receipe-area mb-30">
+                        <img src="{% static 'img/bg-img/foto_receita.png' %}" alt="">
+                        <div class="receipe-content">
+                                <h5>NAO TEM RECEITAS</h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
             </div>
         </div>
     </section>

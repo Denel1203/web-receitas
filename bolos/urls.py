@@ -3,6 +3,6 @@ from .import views
 
 urlpatterns = [
     path('index/', views.index, name= 'index'),
-    path('receita/', views.receita, name= 'receita'),
+    path('receita/<int:id>', views.receita, name= 'receita'),
     path('form/', views.form, name= 'form'),
 ]
